@@ -10,15 +10,6 @@ set ignorecase " ignores case in searches
 set smartcase " searches become case-sensitive when you type uppercase
 set hlsearch " Highlight search terms
 
-" disable arrow keys to force me to learn
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 inoremap jj <Esc>
 
 " get rid of those pesky ~ files
@@ -80,9 +71,6 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=2
 
 set nrformats=alpha "allow incrementing of characters with ctrl-a
-nnoremap sw( dwi(<Esc>pa)<Esc>
-nnoremap sw[ dwi[<Esc>pa]<Esc>
-nnoremap sw{ dwi{<Esc>pa}<Esc>
 
 
 nnoremap S :!pdflatex %<CR><CR>:!open %:r.pdf<CR><CR>
