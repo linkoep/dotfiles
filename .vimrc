@@ -29,9 +29,6 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-" set syntax highlights for specific files
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
@@ -60,9 +57,6 @@ set cindent
 set shiftwidth=2
 set tabstop=2
 
-" Attempt to be able to copy to global clipboard
-set clipboard=unnamed
-
 " Use hybrid line numbers
 set number relativenumber
 
@@ -72,5 +66,9 @@ let vim_markdown_preview_toggle=2
 
 set nrformats=alpha "allow incrementing of characters with ctrl-a
 
-
 nnoremap S :!pdflatex %<CR><CR>:!open %:r.pdf<CR><CR>
+
+" set syntax highlights for specific files
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd FileType markdown setlocal nocindent
+autocmd FileType markdown setlocal spell
