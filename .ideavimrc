@@ -12,8 +12,14 @@ set incsearch " Highlight matching patterns as search is typed
 " Display partial command in status bar
 set showcmd
 
-" Plugin specific
+" IntelliJ specific
 " First, note u and Ctrl-R automatically use GoLand undo/redo
 
 " Join smarter
 set ideajoin
+
+" Enable plugins
+set surround
+set commentary
+set argtextobj
+set exchange
