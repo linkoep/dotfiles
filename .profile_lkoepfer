@@ -1,9 +1,9 @@
 # Rebind tmux back to Ctrl-b on remote to support nested sessions
-if [[ -n "$SSH_CLIENT" && -n "$TMUX" ]] ; then
-    tmux unbind c-a
-    tmux set -g prefix c-b
-    tmux bind c-b send-prefix
-fi
+# if [[ -n "$SSH_CLIENT" && -n "$TMUX" ]] ; then
+    # tmux unbind c-a
+    # tmux set -g prefix c-b
+    # tmux bind c-b send-prefix
+# fi
 
 HISTCONTROL=ignoreboth
 
@@ -14,5 +14,7 @@ parse_git_branch() {
 
 export PS1="${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] \$ "
 
+# Needed for BCC, doesn't hurt on local
+export TERM=xterm-256color
 export VISUAL=vim
 export EDITOR="$VISUAL"

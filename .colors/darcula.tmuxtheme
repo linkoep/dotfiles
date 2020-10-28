@@ -15,8 +15,8 @@ set -g status-left '#[bg="$darcula_bg"]#[fg="$darcula_fg"]#{?client_prefix,#[bg=
 
 
 # Selected Window
-set -g window-status-current-fg "$darcula_selection_fg"
-set -g window-status-current-bg "$darcula_selection_bg"
+set -g window-status-current-style fg="$darcula_selection_fg"
+set -g window-status-current-style bg="$darcula_selection_bg"
 
 
 #################################################
