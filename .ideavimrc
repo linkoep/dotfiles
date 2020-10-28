@@ -1,0 +1,19 @@
+" Use jj as Escape
+inoremap jj <Esc>
+
+" Hybrid line numbers
+set number relativenumber
+
+" Search
+set hlsearch " Highlight all search matches
+set smartcase " Search is case-insensitive unless caps are present
+set incsearch " Highlight matching patterns as search is typed
+
+" Display partial command in status bar
+set showcmd
+
+" Plugin specific
+" First, note u and Ctrl-R automatically use GoLand undo/redo
+
+" Join smarter
+set ideajoin

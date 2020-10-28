@@ -59,5 +59,13 @@ set splitright
 " colorscheme
 colorscheme darcula
 
+" manually specify cursor for putty
+if exists('$TMUX')
+    let &t_SI .= "\ePtmux;\e\e[=1c\e\\"
+    let &t_EI .= "\ePtmux;\e\e[=2c\e\\"
+ else
+    let &t_SI .= "\e[=1c"
+    let &t_EI .= "\e[=2c"
+ endif
 " put some lines at the bottom
 set scrolloff=10
