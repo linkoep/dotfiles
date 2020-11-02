@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/c/Projects/python/labs/intro_python/skill_checking_labs/custom_indexes/sample_solutions/1-expression'
+let g:netrw_dirhist_2='/home/lkoepfer/.vim/ftdetect'
+let g:netrw_dirhist_3='/c/Projects/eltlkdb/scripts'
+let g:netrw_dirhist_4='/c/Projects/bas-python-exploration/bas/labs/lecture-labs/bas-schema'
+let g:netrw_dirhist_5='/c/Projects/c0857e4eaf9d4500c722708729b2cbc9'
+let g:netrw_dirhist_6='/c/Projects/rapid/howtos/rapid-for-dummies/3-contacting-service'

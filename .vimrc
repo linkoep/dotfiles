@@ -1,74 +1,77 @@
-set nocompatible
-filetype plugin indent on
-
-colorscheme molokai
-set background=dark " sets dark background
-set number " adds line numbers
-set numberwidth=5 " width of line numbers
-set scrolloff=5 " gives lines below cursor
-set ignorecase " ignores case in searches
-set smartcase " searches become case-sensitive when you type uppercase
-set hlsearch " Highlight search terms
-
+" Use jj as Escape
 inoremap jj <Esc>
 
-" get rid of those pesky ~ files
-set nobackup
-set nowritebackup
-set noswapfile
+" Turn off audio bell
+set visualbell
+" Deactivate flashing
+set t_vb=
 
-" always show cursor position
-set ruler
+" Hybrid line numbers
+set number relativenumber
 
-set showcmd " display incomplete commands
-set autowrite "automatically write before running commands
+" Enable colors
+set t_Co=256
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
+" Always show status line
+set laststatus=2
 
-" Open new split panes to right and bottom, which feels more natural
+" Smart tabbing/autoindent
+set autoindent
+set copyindent
+
+" Allow backspace over newlines
+set backspace=indent,eol,start
+
+" Bloomberg uses 4 spaces to indent
+set tabstop=8 " Display actual tab characters as 8 spaces
+set softtabstop=4 " Pressing the tab key inserts 4 spaces
+set expandtab " Insert spaces not tabs
+set shiftwidth=4 " The <,> commands and similar use 4 spaces
+
+" Highlight matching parens
+set showmatch 
+
+" Search
+set hlsearch " Highlight all search matches
+set smartcase " Search is case-insensitive unless caps are present
+set incsearch " Highlight matching patterns as search is typed
+
+" Move by visual line, not actual line
+nnoremap j gj
+nnoremap k gk
+vnoremap j gj
+vnoremap k gk
+
+" Display tab completion options in status bar
+set wildmenu
+set showcmd
+
+" Syntax highlighting
+syntax on
+
+" File specific plugins/indent
+filetype plugin indent on
+
+" Split below and to the right like tmux et al
 set splitbelow
 set splitright
 
-" make backspace be able to delete line breaks and past beginning of insert
-set backspace=indent,eol,start
+" colorscheme
+colorscheme darcula
 
-set laststatus=2                      " Show status line on startup
-
-set nowrap                            " Don't wrap long lines
-set listchars=extends:→               " Show arrow if line continues rightwards
-set listchars+=precedes:←             " Show arrow if line continues leftwards
-
-" disable annoying beeps
-set noerrorbells visualbell t_vb=
+" manually specify cursor for putty
+if exists('$TMUX')
+    let &t_SI .= "\ePtmux;\e\e[=1c\e\\"
+    let &t_EI .= "\ePtmux;\e\e[=2c\e\\"
+ else
+    let &t_SI .= "\e[=1c"
+    let &t_EI .= "\e[=2c"
+ endif
+" put some lines at the bottom
+set scrolloff=10
 
 "configure netrw default file browser
 let g:netrw_liststyle = 3 "Tree view
 let g:netrw_banner = 0 "Take away header
 let g:netrw_browse_split = 4 "Open files in previous window
 let g:netrw_winsize = 20 "Window is 25% of page
-
-set autoindent
-set smartindent
-set cindent
-set shiftwidth=2
-set tabstop=2
-
-" Use hybrid line numbers
-set number relativenumber
-
-" configure markdown preview
-let vim_markdown_preview_github=1
-let vim_markdown_preview_toggle=2
-
-set nrformats=alpha "allow incrementing of characters with ctrl-a
-
-nnoremap S :!pdflatex %<CR><CR>:!open %:r.pdf<CR><CR>
-
-" set syntax highlights for specific files
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd FileType markdown setlocal nocindent
-autocmd FileType markdown setlocal spell

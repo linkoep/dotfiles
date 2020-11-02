@@ -1,0 +1,26 @@
+darcula_fg="#808080"
+darcula_bg="#2B2B2B"
+darcula_selection_fg="#A9B7C6"
+darcula_selection_bg="#214283"
+darcula_constant="#9876AA"
+
+#################################################
+# Status bar
+#################################################
+set -g status-style bg="$darcula_bg",fg="$darcula_fg"
+
+# Status Left
+# TODO: Figure out why variable colors don't work here
+set -g status-left '#[bg="$darcula_bg"]#[fg="$darcula_fg"]#{?client_prefix,#[bg=#9876AA],}#{?client_prefix,#[fg=#A9B7C6],}[#S] '
+
+
+# Selected Window
+set -g window-status-current-style fg="$darcula_selection_fg"
+set -g window-status-current-style bg="$darcula_selection_bg"
+
+
+#################################################
+# Message bar
+#################################################
+set -g message-style bg="$darcula_bg",fg="$darcula_fg"
+
