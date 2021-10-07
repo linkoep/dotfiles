@@ -1,0 +1,17 @@
+\set QUIET 1
+\pset null '¤'
+
+\set PROMPT1 '%n@%m:%/ %R%# '
+-- SELECT * FROM<enter>. %R shows what type of input it expects.
+\set PROMPT2 '... %R '
+
+\timing
+
+\x auto
+\set VERBOSITY verbose
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
+\unset QUIET
+
+-- from https://www.citusdata.com/blog/2017/07/16/customizing-my-postgres-shell-using-psqlrc/
