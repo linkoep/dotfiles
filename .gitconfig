@@ -1,0 +1,12 @@
+[core]
+	excludesfile = /home/lkoepfer/.gitignore_global
+[user]
+	email = lkoepfer@bloomberg.net
+	name = lkoepfer
+[credential]
+	helper = store
+[alias]
+        fetchpr = "!f() { \
+            git fetch upstream pull/$1/head:pr-$1; \
+            git checkout pr-$1; \
+        }; f"
