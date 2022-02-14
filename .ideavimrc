@@ -13,7 +13,7 @@ set incsearch " Highlight matching patterns as search is typed
 set showcmd
 
 " IntelliJ specific
-" First, note u and Ctrl-R automatically use GoLand undo/redo
+" First, note u and Ctrl-R automatically use IntelliJ undo/redo
 
 " Join smarter
 set ideajoin

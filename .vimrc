@@ -69,3 +69,9 @@ if exists('$TMUX')
  endif
 " put some lines at the bottom
 set scrolloff=10
+
+"configure netrw default file browser
+let g:netrw_liststyle = 3 "Tree view
+let g:netrw_banner = 0 "Take away header
+let g:netrw_browse_split = 4 "Open files in previous window
+let g:netrw_winsize = 20 "Window is 25% of page
